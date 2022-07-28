@@ -1,0 +1,31 @@
+@service = http://localhost:4004/Books
+
+GET {{service}}/$metadata
+
+###
+
+GET {{service}}/Books?$expand=Author
+
+###
+
+GET {{service}}/Authors
+
+###
+
+POST {{service}}/Authors
+Content-Type: application/json
+
+{
+    "Name": "George Orwell"
+}
+
+###
+
+POST {{service}}/Books
+Content-Type: application/json
+
+{
+    "Title": "1984",
+    "Description": "Distopian Future", 
+    "Author_ID": "7e81d0af-5e34-4177-ba0a-2c1e98f3ace9"
+}
